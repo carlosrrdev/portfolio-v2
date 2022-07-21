@@ -4,10 +4,16 @@ html.h-full(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap",
+      rel="stylesheet"
+    )
     link(rel="stylesheet", href="/css/style.css")
     title Carlos Rodriguez
-  body.w-full.h-full.bg-gray-200.text-gray-700 
-    #site-wrapper.w-full.h-full.max-w-screen-xl.mx-auto.grid.p-6(
+  body.w-full.h-full.bg-sky-50.text-sky-800.font-nunito 
+    #site-wrapper.w-full.h-full.max-w-screen-xl.mx-auto.grid.p-6.gap-y-14.relative(
       class="grid-rows-[auto_1fr_auto]"
     )
       include header.pug
