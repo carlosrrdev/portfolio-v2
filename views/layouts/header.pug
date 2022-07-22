@@ -1,19 +1,49 @@
-header 
+header.relative
   nav.flex.justify-between.items-center 
     p.font-bold.text-3xl
       a(href="/") cr.r
     section
       ul.gap-x-10.hidden(class="md:flex")
-        li 
-          a.btn-nav-link(href="#about") About
-        li 
-          a.btn-nav-link(href="#experience") Experience
-        li 
-          a.btn-nav-link(href="#work") Work
-        li 
-          a.btn-nav-link(href="#contact") Contact
+        include ../components/nav-links.pug
         li 
           a.py-2.px-4.rounded.font-bold.border-2.border-sky-800.transition-colors.ease-in-out(
             href="#",
             class="hover:bg-emerald-500 hover:border-emerald-600 hover:text-emerald-50"
           ) Resume
+      #open-mobile-menu-btn.cursor-pointer(class="md:hidden")
+        svg.feather.feather-menu(
+          xmlns="http://www.w3.org/2000/svg",
+          width="24",
+          height="24",
+          viewBox="0 0 24 24",
+          fill="none",
+          stroke="currentColor",
+          stroke-width="2",
+          stroke-linecap="round",
+          stroke-linejoin="round"
+        )
+          line(x1="3", y1="12", x2="21", y2="12")
+          line(x1="3", y1="6", x2="21", y2="6")
+          line(x1="3", y1="18", x2="21", y2="18")
+    #mobile-nav.absolute.top-0.right-0.bg-emerald-500.rounded.text-sky-50.shadow-lg(
+      class="w-4/5"
+    )
+      ul.flex.flex-col.gap-y-6.text-right.p-4
+        li#close-mobile-menu-btn.cursor-pointer
+          svg.feather.feather-x-circle.ml-auto(
+            xmlns="http://www.w3.org/2000/svg",
+            width="24",
+            height="24",
+            viewBox="0 0 24 24",
+            fill="none",
+            stroke="currentColor",
+            stroke-width="2",
+            stroke-linecap="round",
+            stroke-linejoin="round"
+          )
+            circle(cx="12", cy="12", r="10")
+            line(x1="15", y1="9", x2="9", y2="15")
+            line(x1="9", y1="9", x2="15", y2="15")
+        include ../components/nav-links.pug
+        li 
+          a.font-bold(href="/") Resume
